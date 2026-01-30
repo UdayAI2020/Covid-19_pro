@@ -1,0 +1,33 @@
+<mvc:View controllerName="covid.covidpro.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="idPage" title="Record Detail" showNavButton="true" navButtonPress="Back">
+    <content>
+        <VBox id="_IDGenVBox"
+            alignItems="Center"     
+            justifyContent="Center" 
+            width="100%">
+
+            <ObjectHeader 
+                id="1_IDGenObjectHeader" 
+                title="{latest>loc}">
+
+                <attributes>
+                    <ObjectAttribute id="_IDGenObjectAttribute" text="Total Confirmed Cases: {latest>totalConfirmed}" />
+                    <ObjectAttribute id="_IDGenObjectAttribute2" text="Indians: {latest>confirmedCasesIndian}" />
+                    <ObjectAttribute id="_IDGenObjectAttribute3" text="Foreigners: {latest>confirmedCasesForeign}" />
+                    <ObjectAttribute id="_IDGenObjectAttribute4" text="Discharged: {latest>discharged}" />
+                    <ObjectAttribute id="_IDGenObjectAttribute5" text="Deaths: {latest>deaths}" />
+                </attributes>
+
+            </ObjectHeader>
+
+        </VBox>
+    </content>
+</Page>
+</mvc:View>
+
+

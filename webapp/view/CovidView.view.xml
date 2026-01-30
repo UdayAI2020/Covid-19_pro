@@ -1,0 +1,51 @@
+<mvc:View controllerName="covid.covidpro.controller.CovidView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+    <Page id="page">
+    <Panel id="_IDGenPanel" class="panelStyle" expandable="true" expanded="true" headerText="Tracking the Pandemic: COVID‑19 Trends Over Time" width="auto">
+    <content>
+        <Button id="_IDGenButton1" text="Latest count by List"
+						press="onPressList"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+                        type="Emphasized">
+					
+		</Button>
+		<Button id="_IDGenButton2" type="Attention"
+					text="Latest count by Graph"
+				    press="onPressGraph"
+					ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+		</Button>
+    </content>
+    </Panel>
+     <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='column'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset id="_IDGenFlattenedDataset" data="{/data}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition id="_IDGenDimensionDefinition" name="day"
+                                value="{day}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition id="_IDGenMeasureDefinition" name="total"
+                                value="{summary/total}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="total" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="day" />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOver"></viz:Popover>
+                </viz:dependents>
+            </viz:VizFrame>
+    </Page>
+</mvc:View>

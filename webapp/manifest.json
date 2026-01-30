@@ -1,0 +1,123 @@
+{
+  "_version": "1.81.0",
+  "sap.app": {
+    "id": "covid.covidpro",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.1",
+      "toolsId": "bb76a2b9-f72b-4036-8904-238790458446"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.144.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "covid.covidpro.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "covid.covidpro.view",
+        "async": true,
+        "viewPath": "covid.covidpro.view"
+      },
+      "routes": [
+        {
+          "name": "RouteCovidView",
+          "pattern": ":?query:",
+          "target": ["TargetCovidView"]
+        },
+        {
+          "name": "RouteList",
+          "pattern": "List",
+          "target": ["TargetList"]
+        },
+        {
+          "name": "RoutePie",
+          "pattern": "Pie",
+          "target": ["TargetPie"]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "Detail/{index}",
+          "target": ["TargetDetail"]
+        }
+      ],
+      "targets": {
+        "TargetCovidView": {
+          "id": "CovidView",
+          "name": "CovidView"
+        },
+        "TargetList": {
+          "id": "List",
+          "name": "List"
+        },
+        "TargetPie": {
+          "id": "Pie",
+          "name": "Pie"
+        },
+        "TargetDetail": {
+          "id": "Detail",
+          "name": "Detail"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "covid.covidpro.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

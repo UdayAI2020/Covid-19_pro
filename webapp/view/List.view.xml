@@ -1,0 +1,37 @@
+<mvc:View controllerName="covid.covidpro.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+    <Page id="pageId1" >
+        	<List
+		id="myList"
+		headerText="Regional Covid Data"
+		items="{Latest>/data/regional}"
+		mode="SingleSelectMaster"
+        selectionChange="onSelChange">
+		<headerToolbar>
+                    <Toolbar id="newIdToolbar">
+                        <Button id="newIDBack" icon="sap-icon://nav-back" press="Back"/>
+                        <Text id="newIdOrdersTitle" text="Region-wise COVID Data"/>
+                        <ToolbarSpacer id="newIdSpacer"/>
+                        <Text id="searchLabel" text="Region"/>
+                        <SearchField id="newIdSearchField" width="30%" liveChange="onSearch"/>
+                        <Button id="newIdRef" icon="sap-icon://refresh" press="Refresh"/>
+                        <Button id="newIdSortAscBtn" icon="sap-icon://sort-ascending" press="sortAsc"/>
+                        <Button id="newIdSortDescBtn" icon="sap-icon://sort-descending" press="sortDesc"/>
+                    </Toolbar>
+                </headerToolbar>
+		<items>
+			<StandardListItem
+				title="{Latest>loc}"
+				description="Confirmed Cases: {Latest>totalConfirmed}"
+				info="Deaths: {Latest>deaths}"
+				id="Id1"
+				
+				infoState="{path: 'Latest>deaths', formatter: '.formatter.getDeathColor'}"/>
+
+		</items>
+	</List>
+    </Page>
+</mvc:View>
