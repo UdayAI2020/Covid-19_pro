@@ -4,40 +4,7 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("covidpro.controller.Detail", {
-        //dataPath: "https://api.rootnet.in/covid19-in/stats/latest",
-        // onInit: function () {
-
-        //     this.getOwnerComponent().getRouter()
-        //         .getRoute("RouteDetail")
-        //         .attachPatternMatched(this.onPatternMatched, this);
-        // },
-
-        // onPatternMatched: function (oEvent) {
-        //     var index = oEvent.getParameter("arguments").index;
-        //     var oView = this.getView();
-
-        //     // Bind the view to the selected order
-        //     oView.bindElement({
-        //         dataPath: "https://api.rootnet.in/covid19-in/stats/latest"+index
-
-        //     });
-        // },
-
-
-        //.....................working..................
-        // onInit: function () {
-        //     let oRouter = this.getOwnerComponent().getRouter();
-        //     oRouter.attachRoutePatternMatched(this.onRouteMatched, this);
-        // },
-        // onRouteMatched: function (oEvent) {
-        //     console.log(oEvent);
-        //     let index = oEvent.getParameter("arguments").index;
-        //     let sPath = "/data/regional/" + index;
-        //     let oView = this.getView();
-        //     console.log(oView)
-        //     oView.bindElement(sPath);
-
-        // },........................................
+        
         onInit: function () {
     var oModel = new sap.ui.model.json.JSONModel();
     this.getView().setModel(oModel, "latest");   // named model for this view only
