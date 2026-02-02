@@ -41,19 +41,6 @@ sap.ui.define([
         Back: function () {
             this.getOwnerComponent().getRouter().navTo("RouteList");
         },
-
-        // onFilter: function () {
-        //     var aFilter = [];
-        //     var ProductName = this.getView().byId("idInputProductFilter").getValue();
-
-        //     if (ProductName) {
-        //         aFilter.push(new Filter("Product", FilterOperator.Contains, ProductName));
-        //     }
-
-
-        //     var oTable = this.getView().byId("idMTable");
-        //     oTable.getBinding("items").filter(aFilter);
-        // }
     });
 });
 
