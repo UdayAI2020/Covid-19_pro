@@ -26,16 +26,16 @@ sap.ui.define([
                         formatString: formatPattern.SHORTFLOAT
                     },
                     title: {
-                        visible: false
+                        visible: true
                     }
                 },
                 categoryAxis: {
                     title: {
-                        visible: false
+                        visible: true
                     }
                 },
                 title: {
-                    visible: false,
+                    visible: true,
                     text: 'COVID-CASE HISTORY'
                 }
             });
